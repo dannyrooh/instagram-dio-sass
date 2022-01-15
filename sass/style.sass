@@ -1,0 +1,119 @@
+@import 'variables'
+@import 'mixins'
+@import 'helper'
+
+
+* 
+    @extend %base
+
+body
+    width: 100%
+    min-height: 100vh
+    padding: 0
+    margin: 0
+    background-color: $bg-color
+    display: flex
+    justify-content: center
+
+.instagram-wrapper
+    
+    @include flex(start,60%)
+    height: 100vh
+
+.instagram-phone
+    @include flex(center)
+
+    img
+        height: 50rem
+
+.instagram-continue
+    @include flex(space-around, $direction: column)
+    min-height: 34rem
+
+.group
+    @include flex(space-between, 100%, column)
+    background-color: $white
+    padding: 1.3rem 0
+    border: 1px solid lightgray
+
+    &:nth-child(1)
+        min-height: 23rem
+
+    &:nth-child(2)
+        margin: 1rem 0
+    
+        
+.instagram-logo 
+    height: 3rem
+    
+.profile-photo 
+    @include flex(center)
+
+    img 
+        height: 8rem
+        border-radius: 50%
+
+.instagram-login 
+    background-color: $ft-color
+    padding: 12px
+    border-radius: 4px
+    color: $white
+
+    &:visited
+        color: $white
+
+
+.instagram-logout 
+    color: $ft-color
+    margin-top: 1rem
+
+.not-account 
+    color: $unrealce-color
+
+
+.get-the-app 
+    @include flex(center, 100%)
+    flex-direction: column
+    padding: 1.3rem 0
+
+
+.download 
+    @include flex(space-between, 100%)
+    padding: 1rem
+
+
+.app-download 
+    height: 3rem
+    width: 10rem
+    background-size: cover
+
+    &:nth-child(1) 
+        background-image: url('./../resources/img/apple-button.png')
+
+    &:nth-child(2) 
+        background-image: url('./../resources/img/googleplay-button.png')
+
+
+/* media queries */
+@media (max-width: 1024px) 
+    .instagram-wrapper 
+        width: 90%
+
+@media (max-width: 650px) 
+    body 
+        background-color: $bg-color
+
+    .instagram-wrapper 
+        width: 90%
+    
+
+    .instagram-phone 
+        display: none
+    
+
+    .instagram-continue 
+        width: 100%
+    
+    
+    .group 
+        border: 1px solid transparent
